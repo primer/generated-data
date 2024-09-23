@@ -1,6 +1,6 @@
 {
-  "name": "generated-data",
-  "version": "0.0.0",
+  "name": "@primer/generated-data",
+  "version": "0.0.1",
   "description": "A repo with generated GitHub-like data to be used in tools like Figma plugins and prototypes.",
   "type": "module",
   "main": "lib/index.js",
@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "preversion": "echo \"Warning: No tests specified\" && exit 0",
     "version": "npm run build && git add -A dist lib",
-    "postversion": "gith push && git push tags && npm publish"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "keywords": [],
   "author": "Github Inc.",
