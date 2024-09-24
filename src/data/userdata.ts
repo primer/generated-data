@@ -9,7 +9,7 @@ export const userdata =
   { name: 'Pavel Bezrukov', login: 'pavbez' },
   { name: 'Hank Zoeng', login: 'hankzolo' },
   { name: 'Julian Hsiao', login: 'hsiaohype' },
-  { name: 'Myung', login: 'Ok Yoo' },
+  { name: 'Myung', login: 'okexplorer' },
   { name: 'Chandrika Gupta', login: 'chandriverse' },
   { name: 'Ólafur Magnússon', login: 'magnusflare' },
   { name: 'Rajab Quraishi', login: 'rajqflow' },
