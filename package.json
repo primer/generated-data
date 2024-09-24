@@ -9,11 +9,13 @@
     "lib"
   ],
   "scripts": {
-    "build": "npm run clean && tsc && npm run copy:asstes",
-    "clean": "rm -rf dist && rm -rf lib",
-    "copy:asstes": "mkdir dist && cp -r assets dist/assets",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "preversion": "echo \"Warning: No tests specified\" && exit 0",
+    "build": "npm run clean && mkdir dist && npm run build:data && npm run copy:asstes",
+    "clean": "rm -rf dist",
+    "build:data": "npx tsx scripts/generate-data.ts",
+    "copy:asstes": "cp -r assets dist/assets",
+    "type-check": "npx tsc --noEmit",
+    "test": "npx vitest && npm run type-check",
+    "preversion": "npm run type-check && npm run test",
     "version": "npm run build && git add -A dist lib",
     "postversion": "git push && git push --tags && npm publish"
   },
@@ -24,6 +26,8 @@
     "@faker-js/faker": "^9.0.1"
   },
   "devDependencies": {
-    "typescript": "^5.6.2"
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
   }
 }

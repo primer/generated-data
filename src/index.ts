@@ -1,1 +1,1 @@
-export { generateUser } from './users.js';
+export { generateUser } from './generateUser.js';
