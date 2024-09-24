@@ -1,12 +1,11 @@
 {
   "name": "@primer/generated-data",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A repo with generated GitHub-like data to be used in tools like Figma plugins and prototypes.",
   "type": "module",
   "main": "lib/index.js",
   "files": [
-    "dist",
-    "lib"
+    "dist"
   ],
   "scripts": {
     "build": "npm run clean && mkdir dist && npm run build:data && npm run copy:asstes",
@@ -14,9 +13,9 @@
     "build:data": "npx tsx scripts/generate-data.ts",
     "copy:asstes": "cp -r assets dist/assets",
     "type-check": "npx tsc --noEmit",
-    "test": "npx vitest && npm run type-check",
+    "test": "npx vitest run && npm run type-check",
     "preversion": "npm run type-check && npm run test",
-    "version": "npm run build && git add -A dist lib",
+    "version": "npm run build && git add -A",
     "postversion": "git push && git push --tags && npm publish"
   },
   "keywords": [],
