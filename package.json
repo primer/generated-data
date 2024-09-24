@@ -1,6 +1,6 @@
 {
   "name": "@primer/generated-data",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A repo with generated GitHub-like data to be used in tools like Figma plugins and prototypes.",
   "type": "module",
   "main": "lib/index.js",
