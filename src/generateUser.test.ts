@@ -12,6 +12,14 @@ describe('generateUser', () => {
       "id",
       "email",
       "hireable",
+     "twitter_username",
+     "blog",
+     "location",
+     "bio",
+     "public_repos",
+     "public_gists",
+     "followers",
+     "following",
     ])
     expect(user.name).toStrictEqual(selected.name)
     expect(user.avatar_url).toStrictEqual(`https://raw.githubusercontent.com/primer/generated-data/main/assets/users/${selected.login}.png`)
