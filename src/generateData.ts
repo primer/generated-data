@@ -14,10 +14,11 @@ type GenerateEnterprise = (type: "enterprise", data: EnterpriseData, login: Ente
 
 type GenerateItem = GenerateUser | GenerateOrg | GenerateEnterprise
 
-
+// @ts-ignore
 const generateItem = <GenerateItem>(type, data, login) => {
   const fakerInstance = fakers[Math.floor(Math.random() * fakers.length)]
   // get item by login
+  // @ts-ignore
   const item = data.find((item) => item.login === login)
 
   if (!item) {
