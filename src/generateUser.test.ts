@@ -1,4 +1,4 @@
-import { generateUser } from './generateUser'
+import { generateUser } from './generateData'
 import { userdata } from './data/userdata'
 
 describe('generateUser', () => {
