@@ -1,4 +1,4 @@
-import {generateUser} from "../src/generateUser.js";
+import {generateUser} from "../src/generateData.js";
 import {userdata} from "../src/data/index.js";
 import { writeFileSync, mkdirSync } from 'fs'
 

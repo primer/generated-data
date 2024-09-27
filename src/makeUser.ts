@@ -1,8 +1,6 @@
-import { faker, fakerFR, fakerDE, fakerJA, fakerIT, fakerSV } from '@faker-js/faker'
-import type { UserData, Usernames } from './data/userdata.js'
+import { Faker } from '@faker-js/faker'
 import { returnOne } from './utilities/returnOne.js'
-
-const fakers = [faker,fakerFR, fakerDE, fakerJA, fakerIT, fakerSV]
+import type { UserDataItems } from './data/userdata.js'
 
 export type User = {
   name: string
@@ -21,16 +19,7 @@ export type User = {
   following: number
 }
 
-export const generateUser = (users: UserData, username: Usernames): User => {
-  const fakerInstance = fakers[Math.floor(Math.random() * fakers.length)]
-  // get user by username
-  const user = users.find((user) => user.login === username)
-
-  if (!user) {
-    throw new Error(`User not found: ${username}`)
-  }
-  
-  return {
+export const makeUser = (user: UserDataItems, fakerInstance: Faker): User => ({
     ...user,
     avatar_url: `https://raw.githubusercontent.com/primer/generated-data/main/assets/users/${user.login}.png`,
     "id": fakerInstance.number.int({ min: 100000, max: 99999999 }),
@@ -44,5 +33,4 @@ export const generateUser = (users: UserData, username: Usernames): User => {
     "public_gists": fakerInstance.number.int(200),
     "followers": fakerInstance.number.int(8000),
     "following": fakerInstance.number.int(33000),
-  }
-}
+})
