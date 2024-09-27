@@ -14,7 +14,7 @@ export type Enterprise = {
 
 export const makeEnterprise = (enterprise: EnterpriseDataItems, fakerInstance: Faker): Enterprise => ({
   ...enterprise,
-  avatar_url: `https://raw.githubusercontent.com/primer/generated-data/main/assets/users/${enterprise.login}.png`,
+  avatar_url: `https://raw.githubusercontent.com/primer/generated-data/main/assets/enterprises/${enterprise.login}.png`,
   "id": fakerInstance.number.int({ min: 100000, max: 99999999 }),
   "description": fakerInstance.company.catchPhrase(),
   "blog": returnOne(`https://${enterprise.login}.${fakerInstance.internet.domainSuffix()}`),

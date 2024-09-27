@@ -21,7 +21,7 @@ export type Org = {
 
 export const makeOrg = (org: OrgDataItems, fakerInstance: Faker): Org => ({
   ...org,
-  avatar_url: `https://raw.githubusercontent.com/primer/generated-data/main/assets/users/${org.login}.png`,
+  avatar_url: `https://raw.githubusercontent.com/primer/generated-data/main/assets/orgs/${org.login}.png`,
   "id": fakerInstance.number.int({ min: 100000, max: 99999999 }),
   email: returnOne(fakerInstance.internet.email({ firstName: org.name })),
   "description": fakerInstance.company.catchPhrase(),
