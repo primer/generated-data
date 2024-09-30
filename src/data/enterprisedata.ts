@@ -1,6 +1,6 @@
 export type EnterpriseData = typeof enterprisedata;
 export type EnterpriseDataItems = (typeof enterprisedata)[number];
-export type EnterpriseName = EnterpriseDataItems["login"];
+export type EnterpriseNames = EnterpriseDataItems["login"];
 
 export const enterprisedata = [
   { name: "ByteStream Technologies Inc", login: "bytestreaminc" },

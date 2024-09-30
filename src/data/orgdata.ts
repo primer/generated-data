@@ -1,6 +1,6 @@
 export type OrgData = typeof orgdata;
 export type OrgDataItems = (typeof orgdata)[number];
-export type OrgName = OrgDataItems["login"];
+export type OrgNames = OrgDataItems["login"];
 
 export const orgdata = [
   { name: "App Architects", login: "app-architects" },
